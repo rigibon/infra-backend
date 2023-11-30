@@ -17,7 +17,6 @@ pipeline {
             waitForQualityGate abortPipeline: true
           }
         }
-      }
 
       stage("Maven test") {
         steps {
