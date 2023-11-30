@@ -24,12 +24,6 @@ pipeline {
           sh 'mvn test'
         }
       }
-  
-      stage('Build') {
-        steps {
-          sh 'docker build . -t backend-prueba'
-        }
-      }
 
       stage('Push') {
         steps {
