@@ -41,4 +41,5 @@ pipeline {
             sh 'ssh rigibon@192.168.0.211 "kubectl expose deployment backend-deployment --port=4200 --target-port=4200 --type=LoadBalancer"'
           }
       }
+  }
 }
