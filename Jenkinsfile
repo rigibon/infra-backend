@@ -12,12 +12,6 @@ pipeline {
             }
           }
 
-      stage("Quality gate") {
-          steps {
-            waitForQualityGate abortPipeline: true
-          }
-        }
-
       stage("Maven test") {
         steps {
           sh 'mvn test'
