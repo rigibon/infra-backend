@@ -38,11 +38,7 @@ public class AppLibros {
 		LibrosController controller = new LibrosController(entityManagerFactory);
 		
 		app.get("/libros", controller::listLibros);
-		app.get("/libros/{id}", controller::getLibro);
-		app.get("libros/search/{keyword}", controller::searchLibro);
-		app.post("/libros", controller::addLibro);
-		app.delete("/libros/{id}", controller::deleteLibro);
-		app.patch("/libros/{id}", controller::patchLibro);
+
 		
 	}
 	
