@@ -30,7 +30,7 @@ public class AppLibros {
 		Javalin app = Javalin.create(config -> {
 			config.plugins.enableCors(cors -> {
 				cors.add(it -> {
-					it.allowHost("http://localhost:4200", "http://192.168.0.39:4200", "http://localhost:5000");
+					it.allowHost("http://localhost:4200", "http://192.168.0.39:4200");
 				});
 			});
 		}).start(port);
