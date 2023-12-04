@@ -30,7 +30,7 @@ public class AppLibros {
 		Javalin app = Javalin.create(config -> {
 			config.plugins.enableCors(cors -> {
 				cors.add(it -> {
-					it.allowHost("http://localhost:4200", "http://192.168.0.39:4200");
+					it.allowHost("http://localhost:4200", "http://192.168.0.39:4200", "http://localhost:5000");
 				});
 			});
 		}).start(port);
@@ -38,8 +38,11 @@ public class AppLibros {
 		LibrosController controller = new LibrosController(entityManagerFactory);
 		
 		app.get("/libros", controller::listLibros);
-
-		
+		app.get("/libros/{id}", controller::getLibro);
+		app.get("libros/search/{keyword}", controller::searchLibro);
+		app.post("/libros", controller::addLibro);
+		app.delete("/libros/{id}", controller::deleteLibro);
+		app.patch("/libros/{id}", controller::patchLibro);
 	}
 	
 	
